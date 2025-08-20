@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-gdlncdju-gitops
+  description: This is GitOps manifest for go-gdlncdju   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-gdlncdju
+    backstage.io/kubernetes-id: go-gdlncdju 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-gdlncdju
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-gdlncdju
